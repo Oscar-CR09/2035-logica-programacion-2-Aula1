@@ -1,4 +1,5 @@
 let numeroSecreto = generarNumeroSecreto();
+let intentos = 1;
 
 
 function asignarTextoElemento(elemento, texto){
@@ -11,15 +12,17 @@ function asignarTextoElemento(elemento, texto){
 function verificarIntento(){
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
  
-    console.log(numeroDeUsuario === numeroSecreto);
+    console.log(intentos);
+
     if (numeroDeUsuario === numeroSecreto) {
-        asignarTextoElemento('p','acertaste el numero');
+        asignarTextoElemento(`p`,`acertaste el numero ${intentos} ${(intentos===1?'vez':'veces')}`);
     }else {
         if (numeroDeUsuario>numeroSecreto) {
             asignarTextoElemento('p','El numero secreto es menor');
         }else{
             asignarTextoElemento('p','El numero secreto es mayor');
         }
+        intentos++;
     }
  
     return;
