@@ -53,7 +53,7 @@ function generarNumeroSecreto() {
         if (listaNuemrosSorteados.includes(nuemroGenerado)) {
             return generarNumeroSecreto();
         }else{
-            listaNumeroSorteado.push(nuemroGenerado);
+            listaNuemrosSorteados.push(nuemroGenerado);
             return nuemroGenerado;
         }
     }
